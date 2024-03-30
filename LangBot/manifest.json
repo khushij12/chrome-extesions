@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "LangBot",
+  "version": "1.0",
+  "description": "This extension helps in translating the selected text into another language.",
+  "permissions": ["tabs", "activeTab", "scripting"],
+  "action": {
+    "default_title": "Language Translator Bot",
+    "default_popup": "HTML/popup.html"
+  },
+  "background": {
+    "service_worker": "scripts/service_worker.js"
+  },
+  "content_scripts": [
+    { "js": ["scripts/content.js"], "matches": ["https://*/*"] }
+  ]
+}
